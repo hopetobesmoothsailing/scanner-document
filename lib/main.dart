@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:async';
-import 'Home/index.dart';
+import 'home/index.dart';
 
 void main() {
     runApp(const MainApp());
