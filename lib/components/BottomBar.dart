@@ -33,7 +33,7 @@ class _BottomBarState extends State<BottomBar> {
 	Widget _buildTab({required int index, required BottomBarItem item, required ValueChanged<int> onPressed}) {
 		return Expanded(
 			child: SizedBox(
-				height: 60.0,
+				height: 65.0,
 				child: Material(
 					type: MaterialType.transparency,
 					child: InkWell(
@@ -43,23 +43,26 @@ class _BottomBarState extends State<BottomBar> {
 							alignment: AlignmentDirectional.center,
 							children: <Widget>[
 								Column(
-									mainAxisAlignment: MainAxisAlignment.center,
+									mainAxisAlignment: MainAxisAlignment.start,
 									children: [
-										Image.asset(
-											item.icon,
-											color: _selectedIndex == index ? Color.fromRGBO(54, 161, 234, 1) : Color.fromRGBO(141, 156, 165, 1),
+										Container(
+											margin: const EdgeInsets.only(top: 6),
+											child: Image.asset(
+												item.icon,
+												color: _selectedIndex == index ? const Color.fromRGBO(54, 161, 234, 1) : const Color.fromRGBO(141, 156, 165, 1),
+											),
 										),
 										Text(
 											item.label,
 											style: TextStyle(
-												color: _selectedIndex == index ? Color.fromRGBO(54, 161, 234, 1) : Color.fromRGBO(141, 156, 165, 1),
+												color: _selectedIndex == index ? const Color.fromRGBO(54, 161, 234, 1) : const Color.fromRGBO(141, 156, 165, 1),
 											),
 										)
 									],
 								),
 								const Positioned(
-									top: 7.0,
-									right: 33.0,
+									top: 5.0,
+									right: 31.0,
 									child: Icon(
 										Icons.brightness_1,
 										color: Color.fromRGBO(255, 51, 71, 1),
@@ -69,16 +72,19 @@ class _BottomBarState extends State<BottomBar> {
 							],
 						)
 						: Column(
-							mainAxisAlignment: MainAxisAlignment.center,
+							mainAxisAlignment: MainAxisAlignment.start,
 							children: [
-								Image.asset(
-									item.icon,
-									color: _selectedIndex == index ? Color.fromRGBO(54, 161, 234, 1) : Color.fromRGBO(141, 156, 165, 1),
+								Container(
+									margin: const EdgeInsets.only(top: 6),
+									child: Image.asset(
+										item.icon,
+										color: _selectedIndex == index ? const Color.fromRGBO(54, 161, 234, 1) : const Color.fromRGBO(141, 156, 165, 1),
+									),
 								),
 								Text(
 									item.label,
 									style: TextStyle(
-										color: _selectedIndex == index ? Color.fromRGBO(54, 161, 234, 1) : Color.fromRGBO(141, 156, 165, 1),
+										color: _selectedIndex == index ? const Color.fromRGBO(54, 161, 234, 1) : const Color.fromRGBO(141, 156, 165, 1),
 									),
 								)
 							],
@@ -92,12 +98,12 @@ class _BottomBarState extends State<BottomBar> {
 	Widget _buildMiddleSeparator() {
 		return Expanded(
 			child: SizedBox(
-				height: 60.0,
+				height: 65.0,
 				child: Container(
 					margin: const EdgeInsets.only(bottom: 4),
 					decoration: const BoxDecoration(
 						border: Border(
-							bottom: BorderSide(width: 2.5, color: const Color.fromRGBO(47, 50, 52, 1))
+							bottom: BorderSide(width: 2.5, color: Color.fromRGBO(47, 50, 52, 1))
 						)
 					),
 				),
