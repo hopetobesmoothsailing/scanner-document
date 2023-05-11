@@ -11,8 +11,9 @@ class BottomBarItem {
 class BottomBar extends StatefulWidget {
 	final ValueChanged<int>? onTabSelected;
 	final List<BottomBarItem>? items;
+  int? currentIndex;
 
-	BottomBar({this.onTabSelected, this.items}) {
+	BottomBar({this.onTabSelected, this.items, this.currentIndex}) {
 		assert(this.items!.length == 2 || this.items!.length == 4);
 	}
 
@@ -22,6 +23,12 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
 	int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.currentIndex ?? 0;
+  }
 
 	void _updateIndex(int index) {
 		widget.onTabSelected!(index);

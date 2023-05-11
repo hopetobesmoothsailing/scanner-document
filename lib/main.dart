@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     @override
     void initState() {
         super.initState();
-        Future.delayed(Duration(seconds: 5), () {
+        Future.delayed(const Duration(seconds: 3), () {
             _getStoragePermission();
             _getCameraPermission();
         });
