@@ -1,9 +1,12 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:scanner_document/components/BottomBar.dart';
 import 'package:scanner_document/components/ImageTextButton.dart';
 import 'package:scanner_document/components/ScanButton.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:scanner_document/files/index.dart';
+import 'package:scanner_document/main.dart';
+import 'package:scanner_document/scan/index.dart';
 
 class Home extends StatefulWidget {
     const Home({Key? key}) : super(key: key);
@@ -13,7 +16,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
     int _selectedIndex = 0;
 
     void _selectedTab(int index) {
@@ -26,7 +28,7 @@ class _HomeState extends State<Home> {
     }
 
     void onScan() {
-        print('Scan is activated');
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const Scan()));
     }
     
     @override
