@@ -15,6 +15,7 @@ dependencies:
   path_provider: ^2.0.15
   path: ^1.8.2
   modal_bottom_sheet: ^2.1.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/icons/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  min_sdk_android: 21

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scanner_document/components/BottomBar.dart';
 import 'package:scanner_document/components/ScanButton.dart';
 import 'package:scanner_document/home/index.dart';
+import 'package:scanner_document/scan/index.dart';
 
 class Files extends StatefulWidget {
     const Files({Key? key}): super(key: key);
@@ -28,7 +29,7 @@ class _FilesState extends State<Files> {
     }
 
     void onScan() {
-        print('Scan is activated');
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const Scan()));
     }
 
     @override
