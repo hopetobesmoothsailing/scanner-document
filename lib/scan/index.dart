@@ -4,6 +4,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:scanner_document/main.dart';
 import 'package:scanner_document/scan/FlashModal.dart';
 import 'package:scanner_document/scan/HDModal.dart';
+import 'package:scanner_document/scan/ImportImage.dart';
 import 'package:scanner_document/scan/SettingBar.dart';
 
 class Scan extends StatefulWidget {
@@ -212,7 +213,9 @@ class _ScanState extends State<Scan> with WidgetsBindingObserver {
                                                             )
                                                         ),
                                                         TextButton(
-                                                            onPressed: (){},
+                                                            onPressed: (){
+                                                                Navigator.push(context, MaterialWithModalsPageRoute(builder: (context) => const ImportImage()));
+                                                            },
                                                             child: Column(
                                                                 mainAxisSize: MainAxisSize.min,
                                                                 children: const [
