@@ -5,7 +5,7 @@ class AlbumModal extends StatefulWidget {
     Function? setAlbumId;
     List<AssetPathEntity> albums;
     String? albumId;
-    AlbumModal({required this.albums, this.setAlbumId, this.albumId});
+    AlbumModal({required this.albums, required this.setAlbumId, this.albumId});
 
     @override
     _AlbumModalState createState() => _AlbumModalState();
@@ -71,7 +71,7 @@ class _AlbumModalState extends State<AlbumModal> {
                                                         ),
                                                         const SizedBox(height: 5,),
                                                         Text(
-                                                            '${snapshot.data!}',
+                                                            '${snapshot.data}',
                                                             style: const TextStyle(
                                                                 fontFamily: 'SF Pro Display',
                                                                 fontStyle: FontStyle.normal,

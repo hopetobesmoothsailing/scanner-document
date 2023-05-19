@@ -4,6 +4,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:scanner_document/main.dart';
 import 'package:scanner_document/scan/FlashModal.dart';
 import 'package:scanner_document/scan/HDModal.dart';
+import 'package:scanner_document/scan/ImportFile.dart';
 import 'package:scanner_document/scan/ImportImage.dart';
 import 'package:scanner_document/scan/SettingBar.dart';
 
@@ -195,7 +196,9 @@ class _ScanState extends State<Scan> with WidgetsBindingObserver {
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                         TextButton(
-                                                            onPressed: (){},
+                                                            onPressed: (){
+                                                                Navigator.push(context, MaterialPageRoute(builder: (context) => ImportFile()));
+                                                            },
                                                             child: Column(
                                                                 mainAxisSize: MainAxisSize.min,
                                                                 children: const [
