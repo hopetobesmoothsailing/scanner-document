@@ -3,7 +3,8 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'dart:typed_data';
 
-import 'package:scanner_document/scan/AlbumModal.dart';
+import 'package:scanner_document/components/AlbumModal.dart';
+import 'package:scanner_document/scan/EditImage.dart';
 
 
 class ImportImage extends StatefulWidget {
@@ -16,7 +17,7 @@ class ImportImage extends StatefulWidget {
 class _ImportImageState extends State<ImportImage> {
     List<AssetEntity> _mediaList = [];
     List<AssetPathEntity> _albums = [];
-    List<String> _selectedAssets = [];
+    List<AssetEntity> _selectedAssets = [];
     String _currentAlbumId = 'isAll';
 
     Future _getImages() async {
@@ -38,10 +39,10 @@ class _ImportImageState extends State<ImportImage> {
         });
     }
 
-    void _selectAsset(String id) {
+    void _selectAsset(AssetEntity asset) {
         setState(() {
-            if (_selectedAssets.contains(id)) _selectedAssets.remove(id);
-            else _selectedAssets.add(id);
+            if (_selectedAssets.contains(asset)) _selectedAssets.remove(asset);
+            else _selectedAssets.add(asset);
         });
     }
     
@@ -103,7 +104,9 @@ class _ImportImageState extends State<ImportImage> {
                                     ],
                                 ),
                                 TextButton(
-                                    onPressed: _selectedAssets.isNotEmpty ? (){} : null,
+                                    onPressed: _selectedAssets.isNotEmpty ? (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => EditImage(images: _selectedAssets)));
+                                    } : null,
                                     style: ButtonStyle(
                                         padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 15, vertical: 0)),
                                         backgroundColor: _selectedAssets.isNotEmpty ? MaterialStateProperty.all(const Color.fromRGBO(54, 161, 234, 1)) : MaterialStateProperty.all(const Color.fromRGBO(204, 204, 204, 1)),
@@ -135,7 +138,7 @@ class _ImportImageState extends State<ImportImage> {
                             ),
                             itemBuilder: (BuildContext context, int index) {
                                 return GestureDetector(
-                                    onTap: () => _selectAsset(_mediaList[index].id),
+                                    onTap: () => _selectAsset(_mediaList[index]),
                                     child: FutureBuilder(
                                         future: _mediaList[index].thumbnailDataWithSize(const ThumbnailSize(200, 200)), //resolution of thumbnail
                                         builder: (BuildContext context, AsyncSnapshot<Uint8List?> snapshot) {
@@ -154,10 +157,10 @@ class _ImportImageState extends State<ImportImage> {
                                                         Container(
                                                             decoration: BoxDecoration(
                                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                                color: _selectedAssets.contains(_mediaList[index].id) ? const Color.fromRGBO(54, 161, 234, 0.6) : null
+                                                                color: _selectedAssets.contains(_mediaList[index]) ? const Color.fromRGBO(54, 161, 234, 0.6) : null
                                                             ),
                                                             child: Center(
-                                                                child: _selectedAssets.contains(_mediaList[index].id) ? const Icon(Icons.check_circle, color: Colors.white, size: 35,) : const Icon(Icons.radio_button_unchecked_outlined, color: Color.fromRGBO(54, 161, 234, 0.6), size: 35,),
+                                                                child: _selectedAssets.contains(_mediaList[index]) ? const Icon(Icons.check_circle, color: Colors.white, size: 35,) : const Icon(Icons.radio_button_unchecked_outlined, color: Color.fromRGBO(54, 161, 234, 0.6), size: 35,),
                                                             ),
                                                         )
                                                     ],

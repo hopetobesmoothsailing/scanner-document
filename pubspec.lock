@@ -122,7 +122,7 @@ packages:
     source: hosted
     version: "3.1.1"
   cross_file:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: cross_file
       sha256: "0b0036e8cccbfbe0555fd83c1d31a6f30b77a96b598b35a5d36dd41f718695e9"
@@ -137,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  edge_detection:
+    dependency: "direct main"
+    description:
+      name: edge_detection
+      sha256: "4e6b623eca36d4bb2b13635b556cbe7e69d2c42ef2c9f25c53d6f1b106ce60e0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   fake_async:
     dependency: transitive
     description:
@@ -296,6 +304,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "04094f2eb032cbb06c6f6e8d3607edcfcb0455e2bb6cbc010cb01171dcb64e6d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   matcher:
     dependency: transitive
     description:
@@ -488,6 +504,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  scanbot_sdk:
+    dependency: "direct main"
+    description:
+      name: scanbot_sdk
+      sha256: "50d7805afebcbe1171fd5784baea99e3df8129a149ec24e536a0e59ba32dd728"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.12.0"
   sky_engine:
     dependency: transitive
     description: flutter

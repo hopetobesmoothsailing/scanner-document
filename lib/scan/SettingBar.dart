@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:scanner_document/scan/OrientationModal.dart';
+import 'package:scanner_document/components/OrientationModal.dart';
 
 List<Icon> flashIcons = const [
     Icon(Icons.flash_auto),

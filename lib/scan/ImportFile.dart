@@ -125,7 +125,8 @@ class _ImportFileState extends State<ImportFile> {
                                                 )
                                             ),
                                             Expanded(
-                                                    child: ListView.builder(
+                                                child: ListView.builder(
+                                                    padding: const EdgeInsets.only(top: 5, bottom: 40),
                                                     itemCount: _documentFiles.length,
                                                     itemBuilder: (BuildContext context, int index) {
                                                         final file = _documentFiles[index];
